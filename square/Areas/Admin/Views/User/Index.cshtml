@@ -1,0 +1,66 @@
+﻿@model List<AppUser>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].SurName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].Age)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SurName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @if (@item.Status)
+                    {
+                        <a asp-action="Block" asp-route-id="@item.Id" class="btn btn-success" style="color:white">
+                           <i class="fa-solid fa-user"></i>
+                        </a>
+                    }
+                    else
+                    {
+                        <a asp-action="Unblock" asp-route-id="@item.Id" class="btn btn-danger" style="color:white">
+                           <i class="fa-solid fa-user-slash"></i>
+                        </a>
+                    }
+                    <a asp-action="manageroles" asp-route-id="@item.Id" class="btn btn-primary"><i class="fa-solid fa-user-pen"></i>Role</a>
+                    <a asp-action="resetpassword" asp-route-id="@item.Id" class="btn btn-warning"><i class="fa-solid fa-key"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

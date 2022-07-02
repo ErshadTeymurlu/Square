@@ -1,0 +1,90 @@
+﻿@{
+    Layout = null;
+}
+@model RegisterViewModel
+<html>
+<head>
+    <title>Square - Register Now!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="~/https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/animate.css">
+
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="~/css/aos.css">
+
+    <link rel="stylesheet" href="~/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="~/css/flaticon.css">
+    <link rel="stylesheet" href="~/css/icomoon.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <style>
+        *{
+           margin:0px;
+           padding:0px;
+           box-sizing:border-box;
+        }
+        .form-group{
+            width:400px;
+            margin:auto;
+            border:1px solid #00BFFF;
+            border-radius:30px;
+            padding:20px;
+            box-shadow:0px 0px 14px 2px;
+            margin-top:5px;
+        }
+        .form-group input{
+            margin-bottom:15px;
+        }
+        .form-group button{
+            margin-top:15px;
+            border-radius:10px;
+            background-color:#00BFFF!important;
+            color:white;
+            border:none;
+            padding:10px 20px;
+            cursor:pointer;
+        }
+        .form-group div.d-flex{
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-group">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger ml-3"></div>
+            <input asp-for="Name" class="form-control" placeholder="Name"/>
+            <span class="text-danger" asp-validation-for="Name"></span>
+
+            <input asp-for="Surname" class="form-control" placeholder="Surname"/>
+            <span class="text-danger" asp-validation-for="Surname"></span>
+
+            <input asp-for="Email" class="form-control" placeholder="Email"/>
+            <span class="text-danger" asp-validation-for="Email"></span>
+
+            <input asp-for="Age" class="form-control" placeholder="Age"/>
+            <span class="text-danger" asp-validation-for="Age"></span>
+
+            <input asp-for="Password" class="form-control" placeholder="Password"/>
+            <span class="text-danger" asp-validation-for="Password"></span>
+
+            <input asp-for="PasswordConfirm" class="form-control" placeholder="Repeat Password"/>
+            <span class="text-danger" asp-validation-for="PasswordConfirm"></span>
+
+            <div class="d-flex">
+            <button type="submit">Register</button>
+            </div>
+
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.4/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>
